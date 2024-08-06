@@ -1,5 +1,18 @@
-helm repo add spinnaker https://opsmx.github.io/spinnaker-helm/
+helm repo add kubemonkey https://asobti.github.io/kube-monkey/charts/repo
 helm repo update
 
-helm install spinnaker spinnaker/spinnaker -n spinnaker --create-namespace
-kubectl wait --for=condition=Ready pod -l app.kubernetes.io/instance=spinnaker -n spinnaker
+kubectl create namespace test1
+kubectl create namespace test2
+kubectl create namespace test3
+
+
+helm install kubemonkey kubemonkey/kube-monkey \
+ --version 1.5.0 --set config.dryRun=false \
+ --set config.whitelistedNamespaces="{test1,test2,test3}" \
+ --namespace kube-monkey --create-namespace
+
+kubectl apply -f deployments --namespace test1
+kubectl apply -f deployments --namespace test2
+kubectl apply -f deployments --namespace test3
+
+kubectl wait --for=condition=Ready pod -l app=kube-monkey -n kube-monkey
