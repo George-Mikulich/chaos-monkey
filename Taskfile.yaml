@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  hello:
+    desc: Prints Hello message
+    cmds:
+      - echo 'Hello World from Task!'
+    silent: true
