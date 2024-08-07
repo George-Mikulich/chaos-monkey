@@ -19,7 +19,7 @@ data:
       limits:
         cpu: 0.15
         memory: 512Mi
-  instanceID: 0a412e23-b6e7-4122-8851-694529b88ec2
+  instanceID: d1d8dbfb-fbc2-4838-9813-0424542f1cae
 ---
 apiVersion: v1
 kind: Service
@@ -568,7 +568,7 @@ data:
   SERVER_ADDR: http://chaos-litmus-frontend-service.litmus.svc.cluster.local:9091/api/query
   INFRA_SCOPE: namespace
   VERSION: 3.9.1
-  START_TIME: "1722953253637"
+  START_TIME: "1723014159280"
   SKIP_SSL_VERIFY: "false"
   CUSTOM_TLS_CERT: ""
   IS_INFRA_CONFIRMED: "false"
@@ -581,8 +581,8 @@ metadata:
   name: subscriber-secret
   namespace: test
 stringData:
-  INFRA_ID: 0a412e23-b6e7-4122-8851-694529b88ec2
-  ACCESS_KEY: uauHvG6EZJYtXjDUD1qg5J3hGm8rhCP6
+  INFRA_ID: d1d8dbfb-fbc2-4838-9813-0424542f1cae
+  ACCESS_KEY: mNoYtL9voOW3ffn8CA7eC5-0740NHc-z
 ---
 apiVersion: apps/v1
 kind: Deployment
